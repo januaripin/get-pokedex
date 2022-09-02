@@ -1,8 +1,8 @@
-import '../models/pokemon_list_model.dart';
+import '../models/pokemon_list_item_model.dart';
 
 abstract class PokemonDatasource {
-  Future<List<PokemonListModel>> fetchPokemonList({
+  Future<List<PokemonListItemModel>> fetchPokemonList({
     required int limit,
-    required int page,
+    required int offset,
   });
 }

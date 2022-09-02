@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-import '../models/pokemon_list_model.dart';
+import '../models/pokemon_list_item_model.dart';
 import '../models/pokemon_list_response_model.dart';
 import 'pokemon_datasource.dart';
 
@@ -10,11 +10,10 @@ class PokemonDatasourceImpl extends PokemonDatasource {
   PokemonDatasourceImpl(Dio client) : _client = client;
 
   @override
-  Future<List<PokemonListModel>> fetchPokemonList({
+  Future<List<PokemonListItemModel>> fetchPokemonList({
     required int limit,
-    required int page,
+    required int offset,
   }) async {
-    final offset = (page - 1) * limit;
     final params = <String, dynamic>{
       'limit': limit,
       'offset': offset,

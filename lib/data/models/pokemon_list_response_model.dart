@@ -1,10 +1,10 @@
-import 'pokemon_list_model.dart';
+import 'pokemon_list_item_model.dart';
 
 class PokemonListResponseModel {
   final int count;
   final String? next;
   final String? previous;
-  final List<PokemonListModel> results;
+  final List<PokemonListItemModel> results;
 
   PokemonListResponseModel({
     required this.count,
@@ -18,7 +18,7 @@ class PokemonListResponseModel {
         next: data['next'],
         previous: data['previous'],
         results: List.from(
-          data['results'].map((json) => PokemonListModel.fromJson(json)),
+          data['results'].map((json) => PokemonListItemModel.fromJson(json)),
         ),
       );
 }

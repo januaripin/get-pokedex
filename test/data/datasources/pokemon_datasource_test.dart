@@ -29,7 +29,7 @@ void main() {
       client.httpClientAdapter = MockDioAdapter.success(json);
 
       // act
-      final result = await datasource.fetchPokemonList(limit: 10, page: 1);
+      final result = await datasource.fetchPokemonList(limit: 10, offset: 0);
 
       // assert
       expect(result.length, expected.length);
@@ -41,7 +41,7 @@ void main() {
       client.httpClientAdapter = MockDioAdapter.fail();
 
       // act
-      final result = datasource.fetchPokemonList(limit: 10, page: 1);
+      final result = datasource.fetchPokemonList(limit: 10, offset: 0);
 
       // assert
       expect(result, throwsException);
