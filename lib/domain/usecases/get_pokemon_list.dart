@@ -14,3 +14,11 @@ class GetPokemonList {
     return _repository.fetchPokemonList(limit: limit, offset: offset);
   }
 }
+
+class GetPokemonListParams {
+  final int limit;
+  final int page;
+
+  GetPokemonListParams({this.limit = 10, this.page = 1});
+
+}
